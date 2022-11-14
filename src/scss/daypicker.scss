@@ -1,0 +1,388 @@
+
+
+@import "./functions";
+@import "./variables";
+
+@import "~bootstrap//scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+/* DayPicker styles */
+
+.DayPicker {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid colour(bright-blue);
+    font-weight: font-weight(regular);
+}
+
+.DayPicker-container.native,
+.DayPicker-container.cottages {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    @include media-breakpoint-up(md) {
+        width: $section-thin;
+    }
+}
+
+.DayPicker-container.native {
+    justify-content: center;
+    align-items: center;
+}
+
+.DayPicker-wrapper {
+    position: relative;
+
+    flex-direction: row;
+    padding-bottom: 1em;
+
+    // padding-left: 40px;
+    // padding-right: 40px;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.DayPicker-Months {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.DayPicker-Month {
+    display: table;
+    margin: 0 1em;
+    margin-top: 1em;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    .cottages & {
+        width: 100%;
+    }
+}
+
+// .DayPicker-NavBar {}
+
+.DayPicker-NavButton {
+    position: absolute;
+    top: 16px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: 2px;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    color: #8B9898;
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.DayPicker-NavButton:hover {
+    opacity: 0.8;
+}
+
+.DayPicker-NavButton--prev {
+    left: 10px;
+    // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAwCAYAAAB5R9gVAAAABGdBTUEAALGPC/xhBQAAAVVJREFUWAnN2G0KgjAYwPHpGfRkaZeqvgQaK+hY3SUHrk1YzNLay/OiEFp92I+/Mp2F2Mh2lLISWnflFjzH263RQjzMZ19wgs73ez0o1WmtW+dgA01VxrE3p6l2GLsnBy1VYQOtVSEH/atCCgqpQgKKqYIOiq2CBkqtggLKqQIKgqgCBjpJ2Y5CdJ+zrT9A7HHSTA1dxUdHgzCqJIEwq0SDsKsEg6iqBIEoq/wEcVRZBXFV+QJxV5mBtlDFB5VjYTaGZ2sf4R9PM7U9ZU+lLuaetPP/5Die3ToO1+u+MKtHs06qODB2zBnI/jBd4MPQm1VkY79Tb18gB+C62FdBFsZR6yeIo1YQiLJWMIiqVjQIu1YSCLNWFgijVjYIuhYYCKoWKAiiFgoopxYaKLUWOii2FgkophYp6F3r42W5A9s9OcgNvva8xQaysKXlFytoqdYmQH6tF3toSUo0INq9AAAAAElFTkSuQmCC');
+    background-image: url(../img/icons/icon-left-blue.svg);
+}
+
+.DayPicker-NavButton--next {
+    right: 10px;
+    // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAwCAYAAAB5R9gVAAAABGdBTUEAALGPC/xhBQAAAXRJREFUWAnN119ugjAcwPHWzJ1gnmxzB/BBE0n24m4xfNkTaOL7wOtsl3AXMMb+Vjaa1BG00N8fSEibPpAP3xAKKs2yjzTPH9RAjhEo9WzPr/Vm8zgE0+gXATAxxuxtqeJ9t5tIwv5AtQAApsfT6TPdbp+kUBcgVwvO51KqVhMkXKsVJFXrOkigVhCIs1Y4iKlWZxB1rX4gwlpRIIpa8SDkWmggrFq4IIRaJKCYWnSgnrXIQV1r8YD+1Vrn+bReagysIFfLABRt31v8oBu1xEBttfRbltmfjgEcWh9snUS2kNdBK6WN1vrOWxObWsz+fjxevsxmB1GQDfINWiev83nhaoiB/CoOU438oPrhXS0WpQ9xc1ZQWxWHqUYe0I0qrKCQKjygDlXIQV2r0IF6ViEBxVTBBSFUQQNhVYkHIVeJAtkNsbQ7c1LtzP6FsObhb2rCKv7NBIGoq4SDmKoEgTirXAcJVGkFSVVpgoSrXICGUMUH/QBZNSUy5XWUhwAAAABJRU5ErkJggg==');
+    background-image: url(../img/icons/icon-right-blue.svg);    
+}
+
+.DayPicker-NavButton--interactionDisabled {
+    display: none;
+}
+
+.DayPicker-Caption {
+    display: table-caption;
+    margin-bottom: 0.5em;
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+.DayPicker-Caption>div {
+    font-size: 1.15em;
+}
+
+.DayPicker-Weekdays {
+    display: table-header-group;
+    margin-top: 1em;
+}
+
+.DayPicker-WeekdaysRow {
+    display: table-row;
+}
+
+.DayPicker-Weekday {
+    display: table-cell;
+    padding: 0.5em;
+    color: #8B9898;
+    text-align: center;
+    font-size: 0.875em;
+}
+
+.DayPicker-Weekday abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.DayPicker-Body {
+    display: table-row-group;
+}
+
+.DayPicker-Week {
+    display: table-row;
+}
+
+.DayPicker-WeekNumber {
+    display: table-cell;
+    padding: 0.5em;
+    min-width: 1em;
+    border-right: 1px solid #EAECEC;
+    color: #8B9898;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 0.75em;
+    cursor: pointer;
+}
+
+.DayPicker-Footer {
+    padding-top: 0.5em;
+}
+
+.DayPicker-TodayButton {
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: #4A90E2;
+    font-size: 0.875em;
+    cursor: pointer;
+}
+
+/* DayPickerInput */
+
+.DayPickerInput {
+    display: inline-block;
+}
+
+.DayPickerInput-OverlayWrapper {
+    position: relative;
+}
+
+.DayPickerInput-Overlay {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* DayPicker Day */
+
+.DayPicker-Day {
+    display: table-cell;
+    padding: 0.5em;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.DayPicker--interactionDisabled .DayPicker-Day {
+    cursor: default;
+}
+
+// Today
+.DayPicker-Day--today:not(.DayPicker-Day--outside) {
+    color: colour(bright-blue);
+    font-weight: font-weight(bold);
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: colour(bright-blue);
+    }
+}
+
+/* Default Day modifiers */
+
+// Default pricing enabled
+// All days have pointer, other than defaults above
+.native .DayPicker-Day {
+    cursor: pointer;
+}
+
+// Hover state for available days
+.native .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--booked):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    background-color: colour(paler-blue);
+}
+
+// Cottages pricing endabled
+// Fix height and width of cell
+.cottages .DayPicker-Day {
+    width: 538/7 * 1px;
+    height: 538/7 * 1px;
+} 
+
+// Starting days obly to have pointer, and outline
+.cottages .DayPicker-Day--starting {
+    cursor: pointer;
+    
+    &:not(.DayPicker-Day--outside) {
+        border: 1px solid colour(bright-blue);
+    }
+}
+
+// Dafaults
+
+// Outside of month
+.DayPicker-container .DayPicker-Day--outside {
+    cursor: default;
+}
+
+// Disabled within month / booked dates
+.DayPicker-container .DayPicker-Day--disabled,
+.DayPicker-container .DayPicker-Day--booked {
+    color: colour(light-grey);
+    cursor: default;
+
+    &:before {
+        background: colour(light-grey)
+    }
+}
+
+// Start and end dates of selection
+.DayPicker-container .DayPicker-Day--start:not(.DayPicker-Day--outside),
+.DayPicker-container .DayPicker-Day--end:not(.DayPicker-Day--outside) {
+    color: colour(paler-blue);
+    background-color: colour(bright-blue);
+}
+
+// Selected dates of date range
+.DayPicker-container .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: colour(paler-blue);
+    color: colour(bright-blue);
+}
+
+.DayPicker {
+
+    &__footer {
+        padding: 10px 0;
+    }
+
+    &__feedback {
+        width: 100%;
+    }
+
+    &__selected {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__summary {
+        font-weight: font-weight(light);
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        &:last-child {
+            border-bottom: 1px solid colour(bright-blue);
+            font-weight: font-weight(semi-bold);
+            order: -1;
+        }
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: column;
+            background: none;
+            margin: 0 10px;
+            width: auto;
+
+            &:last-child {
+                border-bottom: 0;
+                order: initial;
+            }
+        }
+
+        &-value {
+            padding: 5px 10px;
+            font-size: font-size(lg);
+
+            @include media-breakpoint-up(sm) {
+                padding: 10px;
+                border-top: 1px solid colour(bright-blue);
+            }
+
+        }
+    }
+
+    &__reset {
+        margin-left: auto;
+    }
+
+    &__options {
+        border-radius: 5px;
+        border: 1px solid colour(light-grey);
+        padding: 10px;
+        margin-bottom: 16px;
+
+        > div {
+            width: 50%;
+
+            &:first-child {
+                padding-right: 5px;
+            }
+            &:last-child {
+                padding-left: 5px;
+            }
+        }
+    }
+
+}

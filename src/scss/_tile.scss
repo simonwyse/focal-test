@@ -1,0 +1,63 @@
+// Tile
+
+$tile-widths: (
+    xs: 100%,
+    sm: 240px,
+    md: 320px
+);
+
+$tile-margins: (
+    xs: 20px,
+    sm: 15px,
+    md: 20px,
+    lg: 30px
+);
+
+
+
+%tile-spacing {
+
+    @each $bp, $width in $tile-widths {
+        @include media-breakpoint-up($bp) {
+            width: $width;
+        }
+    }
+
+    @each $bp, $margin in $tile-margins {
+        @include media-breakpoint-up($bp) {
+            margin: 0 $margin ($margin * 2);
+        }
+    }
+}
+
+@each $bp, $width in $tile-widths {
+    %tile-width-#{$bp} {
+        @include media-breakpoint-up($bp) {
+            width: $width;
+        }
+    }
+}
+
+@each $bp, $margin in $tile-margins {
+    %tile-margin-#{$bp} {
+        @include media-breakpoint-up($bp) {
+            margin: 0 $margin $margin * 2;
+        }
+    }
+}
+
+%tile-bottom {
+    @each $bp, $margin in $tile-margins {
+        @include media-breakpoint-up($bp) {
+            margin-bottom: ($margin * 2) * -1;
+        }
+    }
+}
+
+@each $bp, $margin in $tile-margins {
+    %tile-bottom-#{$bp} {
+        @include media-breakpoint-up($bp) {
+            margin-bottom: ($margin * 2) * -1;
+        }
+    }
+}

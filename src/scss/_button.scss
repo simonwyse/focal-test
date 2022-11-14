@@ -1,0 +1,87 @@
+//
+// Button
+
+.btn {
+    position: relative;
+    background: white;
+    border: 1px solid colour(bright-blue);
+    padding: 10px 40px 10px 20px;
+    border-radius: 100pc;
+    text-decoration: none;
+
+    // bulma;
+    box-shadow: none;
+    color: colour(bright-blue);
+    font-weight: font-weight(regular);
+    transition: all, 0.3s;
+    cursor: pointer;
+    line-height: 1.25;
+    text-align: center;
+    
+
+    &:hover,
+    &:focus {
+        background: colour(bright-blue);
+        color: colour(white);
+        text-decoration: none;
+    }
+
+    svg.icon {
+        fill: currentColor;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &--no-icon {
+        padding-right: 20px;
+    }
+
+    &--wide {
+        width: 100%;
+    }
+
+    &--small {
+        font-size: font-size(sm);
+        padding: 7px 30px 7px 10px;
+
+        svg.icon {
+            right: 8px
+        }
+    }
+
+    &--large {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: font-size(md);
+    }
+
+    &--round {
+        padding: 20px;
+        border-radius: 40px;
+
+        svg.icon {
+            right: auto;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--clear {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 10px;
+        
+        &:hover,
+        &:focus {
+            background: none;
+        }
+
+        svg.icon {
+            position: static;
+            transform: none;
+        }
+    }
+
+}

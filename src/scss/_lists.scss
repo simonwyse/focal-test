@@ -1,0 +1,31 @@
+//
+// Lists
+
+ul, ol {
+    padding-left: 30px;
+
+    li {
+        @extend %base-text;
+    }
+
+    &.smaller {
+        padding-left: 25px;
+
+        li {
+            font-size: font-size(base);
+        }
+    }
+}
+
+dl {
+    dt {
+        font-size: font-size(xl);
+        font-weight: font-weight(light);
+        color: colour(dark-blue);
+    }
+
+    dd {
+        padding: 10px 0 0;
+        margin-bottom: 40px;
+    }
+}

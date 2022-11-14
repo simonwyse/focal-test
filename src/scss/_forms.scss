@@ -1,0 +1,21 @@
+// Forms
+
+label {
+    font-weight: font-weight(regular);
+}
+
+.form-control {
+    &.error {
+        border-color: $danger;
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba($danger, 0.25)
+        }
+    }
+
+    &-error {
+        color: $danger;
+        font-size: font-size(xs);
+        margin-top: 0.25rem;
+    }
+}

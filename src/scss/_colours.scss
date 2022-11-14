@@ -1,0 +1,18 @@
+// Colours
+// map over colours map, create class and colour
+
+@mixin colour-modifiers($attribute: 'color') {
+    @each $name, $hex in $colours {
+        &-#{$name} {
+            #{$attribute}: $hex;
+        }
+    }
+}
+
+.is {
+    @include colour-modifiers;
+}
+
+.has-bg {
+    @include colour-modifiers($attribute: 'background-color');
+}

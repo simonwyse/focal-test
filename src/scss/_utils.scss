@@ -1,0 +1,14 @@
+// Misc utilities
+
+// Rescrited
+.restricted-container {
+    overflow: auto;
+}
+
+.is-restricted-640-md {
+    width: 640px;
+
+    @include media-breakpoint-up(md) {
+        width: auto;
+    }
+}

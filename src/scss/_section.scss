@@ -1,0 +1,49 @@
+//
+// Section
+
+// $section-padding: 20px;
+// $section-padding-sm: 40px;
+// $section-padding-md: 60px;
+// $section-padding-lg: 80px;
+
+.section {
+    $_self: &;
+
+    padding: ($section-padding * 2) 0;
+
+    @include media-breakpoint-up(sm) {
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: $section-padding-lg;
+    }
+
+    &--thin {
+        margin: 0 auto;
+
+        @include media-breakpoint-up(md) {
+            width: $section-thin;
+        }
+    }
+
+    // &__content {
+    // }
+
+    &__title {
+        + #{$_self}__content {
+            margin-top: $section-padding-sm;
+        }
+    }
+
+    &__button {
+        padding-top: $section-padding-sm;
+        display: flex;
+        justify-content: center;
+    }
+
+}

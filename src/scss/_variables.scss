@@ -1,0 +1,125 @@
+// ------- Variables
+
+$colours: (
+    white:                   #ffffff,
+    bright-blue:             #00A7D9,
+    bright-blue-004:           rgba(#00A7D9, 0.04),
+    bright-blue-lighter-01:    scale-color(#00A7D9, $lightness: 10%),    
+    dark-blue:               #005D78,
+    dark-blue-lighter-15:      scale-color(#005D78, $lightness: 15%),
+    pale-blue:               #B2CFD7,
+    paler-blue:              #f0f8ff,
+    dark-turquoise:          #034052,
+    dark-turqouise-lighter-15: scale-color(#034052, $lightness: 15%),
+    dark-turquoise-005:        rgba(#034052, 0.05),
+    lightest-grey:           #f7f7f7,
+    light-grey:              #d8d8d8,
+    grey:                    #7a7a7a,
+    dark-grey:               #555555
+);
+
+$body-color: colour(dark-grey);
+$headings-color: colour(dark-blue);
+
+// Font weights
+$font-weights: (
+    extra-light: 200,
+    light: 300,
+    regular: 400,
+    semi-bold: 600,
+    bold: 700,
+);
+
+$font-weight-base: font-weight(extra-light);
+$headings-font-weight: $font-weight-base;
+
+// Font sizes
+$font-size-base: 1rem; // 16
+$font-sizes: (
+    xs:         $font-size-base * 0.75,     // 12
+    sm:         $font-size-base * 0.875,    // 14
+    base:       $font-size-base,            // 16
+    md:         $font-size-base * 1.125,    // 18
+    lg:         $font-size-base * 1.25,     // 20
+    xl:         $font-size-base * 1.375,    // 22
+    xxl:        $font-size-base * 1.5,      // 24
+    heading-md: $font-size-base * 1.75,     // 28
+    heading-lg: $font-size-base * 2,        // 32
+    heading-xl: $font-size-base * 2.5,      // 40
+    heading-xxl: $font-size-base * 3        // 48
+);
+
+$h1-font-size:      font-size(heading-xxl);
+$h2-font-size:      font-size(heading-lg);
+$h3-font-size:      font-size(heading-md);
+$h4-font-size:      font-size(xxl);
+$h5-font-size:      font-size(md);
+
+// Line heights
+$line-height-base:  1.5;
+$line-heights: (
+    sm:     1.2,
+    base:   $line-height-base,
+    md:     1.75,
+    lg:     2,
+    xl:     2.25,
+    xxl:    2.5
+);
+
+// Font family
+$font-family-base: 'Muli', sans-serif;
+
+// Change the grid, 20px either side
+$grid-gutter-width: 40px;
+
+// Links
+$link-color: colour(bright-blue);
+$link-hover-color: colour(dark-blue);
+// $link-hover-decoration: none;
+
+// Padding
+$section-padding: 20px;
+$section-padding-sm: 40px;
+$section-padding-md: 60px;
+$section-padding-lg: 80px;
+
+$section-thin: 652px;
+
+// Icons
+$standard-icons: (
+    (undo, 15, 15),
+    (arrow-right, 12, 18),
+    (arrow-left, 12, 18),
+    (carousel-arrow-right, 27, 40),
+    (carousel-arrow-left, 27, 40),
+    (clock, 18, 18),
+    (opener, 18, 18),
+    (phone, 18, 18),
+    (at, 18, 18),
+    (arrow-down, 21, 24),
+    (arrow-up, 21, 24),
+    (print, 18, 18),
+    (faq, 40, 40),
+    (facebook, 25, 25)
+);
+
+$facility-icons: (
+    (sleep, 60, 42),
+    (wifi, 60, 42),
+    (water, 60, 42),
+    (bath, 60, 76),
+    (towels, 60, 64),
+    (fridge, 60, 74),
+    (fishing, 60, 60),
+    (furniture, 60, 58),
+    (bed, 60, 60),
+    (kitchen, 60, 70),
+    (dishwasher, 60, 72),
+    (washingmachine, 60, 72),
+    (microwave, 60, 64),
+    (tv, 60, 64),
+    (coffee, 60, 64),
+    (gaselec, 60, 68),
+    (weber, 60, 70),
+    (parking, 60, 70)
+);

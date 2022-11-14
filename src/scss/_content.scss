@@ -1,0 +1,18 @@
+// Mark down content formatting
+
+.mdcontent {
+
+    p:first-child  {
+        @extend .is-leader;
+        @extend .separator-x;
+        @extend .has-separator-anchor;
+    }
+
+    ol > li  {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

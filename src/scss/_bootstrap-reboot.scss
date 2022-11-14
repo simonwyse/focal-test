@@ -1,0 +1,10 @@
+html {
+    background-color: colour(white);
+    font-size: $font-size-base;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+}

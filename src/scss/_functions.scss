@@ -1,0 +1,37 @@
+// Functinos
+
+// Line height - line-height(key)
+@function line-height($height) {
+    @if map-has-key($line-heights, $height) {
+        @return map-get($line-heights, $height);
+    }
+
+    @warn "Unknown `#{height}` in $line-heights";
+}
+
+// Colours - colour(key)
+@function colour($colour) {
+    @if map-has-key($colours, $colour) {
+        @return map-get($colours, $colour);
+    }
+
+    @warn "Unknown `#{colour}` in $colours";
+}
+
+// Font weight - font-weight(key)
+@function font-weight($weight) {
+    @if map-has-key($font-weights, $weight) {
+        @return map-get($font-weights, $weight);
+    }
+
+    @warn "Unknown `#{weight}` in $font-weights";
+}
+
+// Font size - font-size(key)
+@function font-size($size) {
+    @if map-has-key($font-sizes, $size) {
+        @return map-get($font-sizes, $size);
+    }
+
+    @warn "Unknown `#{size}` in $font-sizes";
+}

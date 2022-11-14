@@ -1,0 +1,83 @@
+//
+// Logo
+
+// Header and footer locations
+.logo {
+    $_self: &;
+
+    &__svg {
+        opacity: 0.3;
+        fill: currentColor;
+    }
+
+    &__link {
+        color: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: font-weight(extra-light);
+    }
+
+    &__ident {
+        font-family: $font-family-base;
+    }
+
+    &-navbar {
+
+        &__link, &__link:hover {
+            color: colour(dark-blue);
+            text-decoration: none;
+        }
+
+        &__link {
+            flex-direction: row;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: column;
+            }
+        }
+
+        &__svg {
+            height: 40px;
+            margin-left: 20px;
+
+            @include media-breakpoint-up(md) {
+                margin-left: 0;
+                height: 65px;
+            }
+        }
+
+        &__ident {
+            padding: map-get($spacers, 2);
+            font-size: font-size(md);
+
+            @include media-breakpoint-up(md) {
+                display: block;
+                font-size: font-size(xxl);
+            }
+        }
+
+    }
+
+    &-footer {
+        margin-top: $section-padding * 2;
+
+        &__link {
+            flex-direction: column;
+            font-weight: font-weight(regular);
+        }
+
+        &__svg {
+            opacity: 1;
+            height: 37px;
+        }
+
+        &__ident {
+            padding: map-get($spacers, 2) 0;
+        }
+
+        @include media-breakpoint-up('lg') {
+            margin-top: 0;
+        }
+    }
+}

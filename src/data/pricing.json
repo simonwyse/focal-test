@@ -1,0 +1,311 @@
+{
+  "bands": [
+    {
+      "id": "peak",
+      "nightly": 200,
+      "extra": 190
+    },
+    {
+      "id": "high",
+      "nightly": 180,
+      "extra": 170
+    },
+    {
+      "id": "mid",
+      "nightly": 160,
+      "extra": 150
+    },
+    {
+      "id": "low",
+      "nightly": 140,
+      "extra": 130
+    }
+  ],
+  "dates": [
+    {
+      "band": "peak",
+      "from": "1st Jan 2022",
+      "to": "7th Jan 2022"
+    },
+    {
+      "band": "high",
+      "from": "8th Jan 2022",
+      "to": "14th Jan 2022"
+    },
+    {
+      "band": "low",
+      "from": "15th Jan 2022",
+      "to": "21st Jan 2022"
+    },
+    {
+      "band": "low",
+      "from": "22nd Jan 2022",
+      "to": "28th Jan 2022"
+    },
+    {
+      "band": "low",
+      "from": "29th Jan 2022",
+      "to": "4th Feb 2022"
+    },
+    {
+      "from": "5th Feb 2022",
+      "to": "11th Feb 2022",
+      "band": "low"
+    },
+    {
+      "from": "12th Feb 2022",
+      "to": "18th Feb 2022",
+      "band": "high"
+    },
+    {
+      "from": "19th Feb 2022",
+      "to": "25th Feb 2022",
+      "band": "low"
+    },
+    {
+      "from": "26th Feb 2022",
+      "to": "4th Mar 2022",
+      "band": "low"
+    },
+    {
+      "from": "5th Mar 2022",
+      "to": "11th Mar 2022",
+      "band": "low"
+    },
+    {
+      "from": "12th Mar 2022",
+      "to": "18th Mar 2022",
+      "band": "low"
+    },
+    {
+      "from": "19th Mar 2022",
+      "to": "25th Mar 2022",
+      "band": "low"
+    },
+    {
+      "from": "26th Mar 2022",
+      "to": "1st Apr 2022",
+      "band": "high"
+    },
+    {
+      "from": "2nd Apr 2022",
+      "to": "8th Apr 2022",
+      "band": "high"
+    },
+    {
+      "from": "9th Apr 2022",
+      "to": "15th Apr 2022",
+      "band": "peak"
+    },
+    {
+      "from": "16th Apr 2022",
+      "to": "22nd Apr 2022",
+      "band": "peak"
+    },
+    {
+      "from": "23rd Apr 2022",
+      "to": "29th Apr 2022",
+      "band": "mid"
+    },
+    {
+      "from": "30th Apr 2022",
+      "to": "6th May 2022",
+      "band": "high"
+    },
+    {
+      "from": "7th May 2022",
+      "to": "13th May 2022",
+      "band": "mid"
+    },
+    {
+      "from": "14th May 2022",
+      "to": "20th May 2022",
+      "band": "mid"
+    },
+    {
+      "from": "21st May 2022",
+      "to": "27th May 2022",
+      "band": "peak"
+    },
+    {
+      "from": "28th May 2022",
+      "to": "3rd Jun 2022",
+      "band": "peak"
+    },
+    {
+      "from": "4th Jun 2022",
+      "to": "10th Jun 2022",
+      "band": "peak"
+    },
+    {
+      "from": "11th Jun 2022",
+      "to": "17th Jun 2022",
+      "band": "high"
+    },
+    {
+      "from": "18th Jun 2022",
+      "to": "24th Jun 2022",
+      "band": "high"
+    },
+    {
+      "from": "25th Jun 2022",
+      "to": "1st Jul 2022",
+      "band": "high"
+    },
+    {
+      "from": "2nd Jul 2022",
+      "to": "8th Jul 2022",
+      "band": "high"
+    },
+    {
+      "from": "9th Jul 2022",
+      "to": "15th Jul 2022",
+      "band": "high"
+    },
+    {
+      "from": "16th Jul 2022",
+      "to": "22nd Jul 2022",
+      "band": "peak"
+    },
+    {
+      "from": "23rd Jul 2022",
+      "to": "29th Jul 2022",
+      "band": "peak"
+    },
+    {
+      "from": "30th Jul 2022",
+      "to": "5th Aug 2022",
+      "band": "peak"
+    },
+    {
+      "from": "6th Aug 2022",
+      "to": "12th Aug 2022",
+      "band": "peak"
+    },
+    {
+      "from": "13th Aug 2022",
+      "to": "19th Aug 2022",
+      "band": "peak"
+    },
+    {
+      "from": "20th Aug 2022",
+      "to": "26th Aug 2022",
+      "band": "peak"
+    },
+    {
+      "from": "27th Aug 2022",
+      "to": "2nd Sep 2022",
+      "band": "peak"
+    },
+    {
+      "from": "3rd Sep 2022",
+      "to": "9th Sep 2022",
+      "band": "high"
+    },
+    {
+      "from": "10th Sep 2022",
+      "to": "16th Sep 2022",
+      "band": "high"
+    },
+    {
+      "from": "17th Sep 2022",
+      "to": "23rd Sep 2022",
+      "band": "mid"
+    },
+    {
+      "from": "24th Sep 2022",
+      "to": "30th Sep 2022",
+      "band": "mid"
+    },
+    {
+      "from": "1st Oct 2022",
+      "to": "7th Oct 2022",
+      "band": "mid"
+    },
+    {
+      "from": "8th Oct 2022",
+      "to": "14th Oct 2022",
+      "band": "mid"
+    },
+    {
+      "from": "15th Oct 2022",
+      "to": "21st Oct 2022",
+      "band": "high"
+    },
+    {
+      "from": "22nd Oct 2022",
+      "to": "28th Oct 2022",
+      "band": "high"
+    },
+    {
+      "from": "29th Oct 2022",
+      "to": "4th Nov 2022",
+      "band": "mid"
+    },
+    {
+      "from": "5th Nov 2022",
+      "to": "11th Nov 2022",
+      "band": "low"
+    },
+    {
+      "from": "12th Nov 2022",
+      "to": "18th Nov 2022",
+      "band": "low"
+    },
+    {
+      "from": "19th Nov 2022",
+      "to": "25th Nov 2022",
+      "band": "low"
+    },
+    {
+      "from": "26th Nov 2022",
+      "to": "2nd Dec 2022",
+      "band": "mid"
+    },
+    {
+      "from": "3rd Dec 2022",
+      "to": "9th Dec 2022",
+      "band": "mid"
+    },
+    {
+      "from": "10th Dec 2022",
+      "to": "16th Dec 2022",
+      "band": "mid"
+    },
+    {
+      "from": "17th Dec 2022",
+      "to": "23rd Dec 2022",
+      "band": "peak"
+    },
+    {
+      "from": "24th Dec 2022",
+      "to": "30th Dec 2022",
+      "band": "peak"
+    },
+    {
+      "from": "31st Dec 2022",
+      "to": "6th Jan 2023",
+      "band": "peak"
+    },
+    {
+      "from": "7th Jan 2023",
+      "to": "13th Jan 2023",
+      "band": "mid"
+    },
+    {
+      "from": "14th Jan 2023",
+      "to": "20th Jan 2023",
+      "band": "low"
+    },
+    {
+      "from": "21st Jan 2023",
+      "to": "27th Jan 2023",
+      "band": "low"
+    },
+    {
+      "from": "28th Jan 2023",
+      "to": "3rd Feb 2023",
+      "band": "low"
+    }
+  ]
+}

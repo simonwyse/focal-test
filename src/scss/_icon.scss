@@ -1,0 +1,32 @@
+// Icons
+
+@each $icon-name, $icon-w, $icon-h in $standard-icons {
+    .icon-#{$icon-name} {
+        width: #{$icon-w}px;
+        height: #{$icon-h}px;
+    }
+}
+
+.icon {
+    &--inline {
+        vertical-align: middle;
+        margin-left: 7px;
+        margin-top: -3px;
+    }
+}
+
+.has-icon-centered {
+    position: relative;
+    padding-left: 25px;
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+svg {
+    fill: currentColor;
+}

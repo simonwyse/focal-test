@@ -1,0 +1,118 @@
+//
+//  Facilities section
+
+.facilities {
+    $__facilities: &;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &--compact {
+        @extend .px-0;
+        #{$__facilities} {
+            &__content {
+                justify-content: space-around;
+                
+                @include media-breakpoint-up(sm) {
+                    justify-content: center;
+                }
+           }
+        }
+    }
+
+    &--extended {
+        #{$__facilities} {
+            &__content {
+                flex-direction: column;
+
+                @include media-breakpoint-up(lg) {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+}
+
+.facility {
+    $__facility: &;
+
+    padding: 40px 0 40px 40px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: '';
+        display: block;
+    }
+
+    &__description {
+        line-height: line-height(sm);
+    }
+
+    &--extended {
+        border-bottom: 1px solid colour(light-grey);
+
+        @include media-breakpoint-up(lg) {
+            margin: 0 20px 0 0;
+            flex: 1 0 calc(50% - 20px);
+            align-items: center;
+
+            &:nth-of-type(2n) {
+                margin: 0 0 0 20px;
+            }
+        }
+
+        &:before {
+            margin: 0 40px 0 0;
+        }
+    }
+
+    &--compact {
+        width: calc(50% - 20px);
+        margin: 10px;
+        background: colour(lightest-grey);
+        padding: 15px 10px;
+        flex-direction: column;
+        text-align: center;
+
+        @include media-breakpoint-up(sm) {
+            width: 180px;
+            margin: 15px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin: 30px;
+        }
+
+        &:before {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        #{$__facility} {
+            &__description {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                min-height: 40px;
+                justify-content: center;
+                font-size: font-size(md);
+            }
+        }
+    }
+}
+
+
+@each $icon-name, $icon-w, $icon-h in $facility-icons {
+    .facility__#{$icon-name} {
+        &:before {
+            width: #{$icon-w}px;
+            height: #{$icon-h}px;
+            background: url(../img/icons/icon-#{$icon-name}.svg) no-repeat center center;
+        }
+    }
+}

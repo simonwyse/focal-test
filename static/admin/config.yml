@@ -1,0 +1,258 @@
+backend:
+  name: git-gateway
+  branch: master
+
+#local_backend: true
+# publish_mode: editorial_workflow
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  # - name: "blog"
+  #   label: "Blog"
+  #   folder: "src/pages/blog"
+  #   create: true
+  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  #   fields:
+  #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Publish Date", name: "date", widget: "datetime"}
+  #     - {label: "Description", name: "description", widget: "text"}
+  #     - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+  #     - {label: "Featured Image", name: "featuredimage", widget: image}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  #     - {label: "Tags", name: "tags", widget: "list"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: Banner, name: banner, widget: object, fields: [{label: Display, name: display, widget: boolean}, {label: Title, name: title, widget: string}, {label: Text, name: text, widget: text}]}          
+          - {label: Heading, name: heading, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}
+          - {label: Booking, name: booking, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Location, name: location, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}]}
+
+      # - file: "src/pages/products/index.md"
+      #   label: "Products Page"
+      #   name: "products"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+      #     - {label: Title, name: title, widget: string}
+      #     - {label: Image, name: image, widget: image}
+      #     - {label: Heading, name: heading, widget: string}
+      #     - {label: Description, name: description, widget: string}
+      #     - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+      #     - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+      #     - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
+      #     - {label: Full_image, name: full_image, widget: image}
+      #     - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+
+      - file: "src/pages/lodge/index.md"
+        label: "Lodge Page"
+        name: "lodge"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "lodge-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}
+          - {label: Carousel images, name: carousel, label_singular: Carousel image, widget: list, summary: "{{fields.caption}} -- {{fields.image}}", fields: [{label: Image, name: image, widget: image}, {label: Caption, name: caption, widget: string}]}
+          - {label: Facilities, name: facilities, widget: object, fields: [{label: Heading, name: heading, widget: string}]}
+          - {label: Floor plan, name: floorplan, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Image, name: image, widget: image}]}
+          - {label: Accessibility, name: accessibility, widget: object, fields: [{label: Heading, name: heading, widget: string}]}
+          - {label: Accessibility list, name: body, widget: markdown}
+
+      - file: "src/pages/park/index.md"
+        label: "Park Page"
+        name: "park"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "park-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Header image, name: image, widget: image}
+          - {label: Content, name: body, widget: markdown}
+          - {label: Facilities, name: facilities, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Items, name: items, label_singular: Item, widget: list, fields: [{label: Facility, name: name, widget: string}]}]}
+          - {label: Golf map, name: golfmap, widget: image }
+
+      - file: "src/pages/area/index.md"
+        label: "Area Page"
+        name: "area"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "area-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}
+          - {label: "Show activity images", name: showImages, widget: boolean}
+          - label: Activities
+            name: activities
+            widget: list
+            fields: 
+              - {label: Name, name: name, widget: string}
+              - {label: Image, name: image, widget: image}
+              - {label: Time, name: time, widget: string}
+              - {label: Link, name: link, widget: string}
+              - {label: Website, name: website, widget: string}
+
+      - file: "src/pages/location/index.md"
+        label: "Location Page"
+        name: "location"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "location-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Blurbs, name: blurbs, widget: list, fields: [{label: Text, name: text, widget: text}]}
+          - {label: "Postal Address", name: postal, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: "Address Lines", name: address, label_singular: "Address Line", widget: list, fields: [{label: "Address Line", name: line, widget: string}]}]}
+          - label: Directions
+            name: directions
+            widget: object
+            fields: 
+              - {label: Heading, name: heading, widget: string}
+              - label: North
+                name: north
+                widget: object
+                collapsed: true
+                hint: Direction from the north
+                fields: 
+                  - {label: Heading, name: heading, widget: string} 
+                  - label: Directions
+                    name: items
+                    widget: list
+                    fields: 
+                      - {label: Item, name: item, widget: string}
+              - label: South
+                name: south
+                widget: object
+                collapsed: true
+                hint: Directions from the South
+                fields: 
+                  - {label: Heading, name: heading, widget: string} 
+                  - label: Directions
+                    name: items
+                    widget: list
+                    fields: 
+                      - {label: Item, name: item, widget: string}
+              - {label: On arrival, name: arrive, collapsed: true, hint: Instructions for on arrival, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Text, name: item, widget: text}]}
+
+      - file: "src/pages/booking/index.md"
+        label: "Booking Page"
+        name: "booking"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "booking-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Body, name: body, widget:  markdown}
+
+      - file: "src/pages/booking/terms.md"
+        label: "Terms and Conditions Page"
+        name: "terms"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "content-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Body, name: body, widget: markdown}
+
+      - file: "src/pages/privacy/index.md"
+        label: "Privacy Page"
+        name: "privacy"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "content-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Body, name: body, widget: markdown}
+
+      - file: "src/pages/faq/index.md"
+        label: "FAQ Page"
+        name: "faq"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "faq-page"}
+          - {label: Title, name: title, widget: string, hint: "The title displayed in the browser tab"}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Blurbs, name: blurbs, widget: list, summary: "{{fields.text}}", fields: [{label: Text, name: text, widget: text}]}
+          - label: FAQs
+            name: faqs
+            label_singular: FAQ
+            widget: list
+            fields:
+            - {label: Question, name: question, widget: string}
+            - label: Answers
+              name: answer
+              label_singular: Answer
+              widget: list
+              hint: "Add a multiple single answer and bulleted answer points to create the perfect FAQ!"
+              types: 
+                - label: "Single Answer"
+                  name: entry
+                  widget: object
+                  summary: "{{fields.text}}"
+                  field: {label: "Answer text", name: text, widget: text}
+                - label: "Blulleted Answer"
+                  name: bulleted
+                  widget: object
+                  field: {label: "Bullet Points", name: bulletlist, label_singular: "Bullet Point", widget: list, summary: "{{fields.bulletitem}}", field: {label: "Bullet Point", name: bulletitem, widget: text}}
+
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Settings"
+    editor: 
+       preview: false
+    files: 
+      - file: "src/data/availability.json"
+        label: "Bookings"
+        name: "dates"
+        fields:
+          - name: dates
+            label: "Bookings"
+            label_singular: "Booking"
+            widget: list
+            summary: "{{fields.from}} - {{fields.to}}"
+            fields:
+            - {label: "From date", name: 'from', widget: 'datetime', dateFormat: 'Do MMM YYYY', format: 'Do MMM YYYY', timeFormat: false}
+            - {label: "To date", name: 'to', widget: 'datetime', dateFormat: 'Do MMM YYYY', format: 'Do MMM YYYY', timeFormat: false}
+      - file: "src/data/pricing.json"
+        label: "Date ranges and pricing"
+        name: "pricing"
+        fields: 
+          - label: "Pricing Bands"
+            name: bands
+            widget: list
+            hint: "Configure the pricing bands"
+            allow_add: false
+            summary: '{{fields.id}}'
+            fields:
+              - { label: "Band Name", name: id, widget: hidden}
+              - { label: Nightly price, name: nightly, widget: number, valueType: int, hint: "Price for less than 7 nights" }
+              - { label: Extra price, name: extra, widget: number, valueType: int, hint: "Price for 7 nights or more" }
+          - label: "Date Bands"
+            label_singular: "Date Band"
+            name: dates
+            widget: list
+            summary: '{{fields.from}} --> {{fields.to}} -- {{fields.band}}'
+            fields: 
+              - { label: "Price Band", name: band, widget: select, options: [{label: Low, value: low}, {label: Mid, value: mid}, {label: High, value: high}, {label: Peak, value: peak}]}
+              - { label: "From Date", name: from, widget: datetime, dateFormat: "Do MMM YYYY", format: "Do MMM YYYY", timeFormat: false }
+              - { label: "To Date", name: to, widget: datetime, dateFormat: "Do MMM YYYY", format: "Do MMM YYYY", timeFormat: false }
+
+      - file: "src/pages/index.md"
+        label: "Facilities"
+        name: facilitieslist
+        fields:
+          - label: "Facility Icons"
+            name: facilities
+            widget: object
+            fields: 
+              - { label: Heading, name: heading, widget: string }
+              - { label: Icons, name: items, widget: list, summary: "{{fields.description}} -- Show on homepage: {{fields.promote}}", allow_add: false, fields: [{label: Name, name: name, widget: hidden}, {label: Description, name: description, widget: string}, { label: "Show on homepage", name: promote, widget: boolean, default: false }] }
+

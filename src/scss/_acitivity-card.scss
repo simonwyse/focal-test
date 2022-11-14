@@ -1,0 +1,71 @@
+//
+// Activity cards
+
+.activities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @extend %tile-bottom;
+}
+
+// margins:
+// mob 0 10px 10px
+// tab: 0 15px 15px
+// desk 0 30px 30px
+
+.activity {
+    @extend %tile-spacing;
+
+    display: flex;
+    flex-direction: column;
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 15px;
+    }
+
+    &__name {
+        position: relative;
+        opacity: 0.8;
+        z-index: 1;
+        margin: 0 0 15px 0;
+        padding: 0 0 15px 0;
+        font-size: font-size(xl);
+        font-weight: font-weight(regular);
+        text-align: center;
+        border-bottom: 1px solid colour(bright-blue);
+    }
+
+    &__time {
+        margin-top: auto !important;
+    }
+
+    &__time,
+    &__link {
+        font-weight: font-weight(light);
+        font-size: font-size(base);
+        line-height: line-height(lg);
+        position: relative;
+        padding-left: 25px;
+        margin: 0;
+    }
+
+    &__link {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+    }
+
+    &__icon {
+        fill: colour(grey);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

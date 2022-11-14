@@ -1,0 +1,230 @@
+// Separator
+
+@mixin separator-line($width) {
+    $separator-length: $width * 2 + map-get($separator-content, "width" ); // change separator content to map
+
+    width: $separator-length;
+    transform: translateX(($separator-length / 2) * -1);
+}
+
+
+// $separator-content: 90px 52px; // default horiz, w,h
+// $separator-line-width: 15vw 150px 75px; // is-separator, horiz, vert
+// $separator-line-height: 2px;
+
+$separator-content: (
+    'width': 90px,
+    'height': 52px
+);
+
+$separator-line: (
+    'colour': colour(bright-blue),
+    'thickness': 2px,
+    'x-length': 75px,
+    'x-length-lg': 150px,
+    'y-length': 200px
+);
+
+// $has-separator-line-width: nth($separator-line-width, 2) * 2 + nth($separator-content, 1);
+$separator-x-padding: ($section-padding * 4) + map-get($separator-content, "height"); // nth($separator-content, 2);
+
+%has-separator {
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    // Line
+    &:before {
+        background-color: map-get($separator-line, "colour");
+    }
+
+    // Image
+    &:after {
+        // background-position: center center;
+        // background-repeat: no-repeat;
+    }
+
+}
+
+%separator-anchor {
+    // background images
+    &:after {
+        background: white url(../img/icons/icon-anchor.svg);
+        @extend %has-separator-background;
+    }
+}
+
+%separator-shell {
+    // background-images
+    &:after {
+        background: colour(dark-turquoise) url(../img/icons/icon-shell.svg);
+        @extend %has-separator-background;
+        background-size: 40px;
+    }
+}
+
+%has-separator-background {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.separator-x {
+    padding-bottom: $separator-x-padding;
+    margin-bottom: 0;
+
+    // Line
+    &:before {
+        height: map-get($separator-line, "thickness");
+        bottom: ($separator-x-padding / 2) - map-get($separator-line, "thickness");
+        left: 50%;
+
+        @include separator-line(
+            map-get($separator-line, "x-length")
+        );
+
+        @include media-breakpoint-up('md') {
+            // &:before {
+                @include separator-line(
+                    map-get($separator-line, "x-length-lg")
+                );
+            // }
+        }
+    }
+
+    // Content
+    &:after {
+        width: map-get($separator-content, "width");
+        height: map-get($separator-content, "height");
+        left: 50%;
+        bottom: ($separator-x-padding - map-get($separator-content, "height")) / 2; // 80: sepearator padding ;
+        transform: translateX(-50%);
+    }
+
+}
+
+
+.separator-y {
+
+    &-lg {
+        //@extend .separator-y;
+
+        @include media-breakpoint-up('lg') {
+            padding-bottom: 0;
+            padding-left: 20px;
+
+            // Line
+            &:before {
+                width: map-get($separator-line, "thickness" );
+                height: map-get($separator-line, "y-length");
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            // Content
+            &:after {
+                left: 0;
+                top: 50%;
+                width: map-get($separator-content, "height");
+                height: map-get($separator-content, "width");
+
+                // width: nth($separator-content, 2);
+                // height: nth($separator-content, 1);
+                transform: translate(-50%, -50%);
+            }
+
+            &:before,
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+.has-separator-anchor {
+    @extend %has-separator;
+    @extend %separator-anchor;
+}
+
+.has-separator-shell {
+    @extend %has-separator;
+    @extend %separator-shell;
+
+}
+
+.separator-none {
+    padding-bottom: 0;
+
+    &:before,
+    &:after {
+        display: none;
+    }
+
+    @include media-breakpoint-up('lg') {
+        &-lg {
+            padding-bottom: 0;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.test {
+    background: red;
+
+    @include media-breakpoint-up('sm') {
+        background: lime;
+    }
+    @include media-breakpoint-up('md') {
+        background: orange;
+    }
+    @include media-breakpoint-up('lg') {
+        background: hotpink;
+    }
+    @include media-breakpoint-up('xl') {
+        background: goldenrod;
+    }
+}
+
+
+.is-separator {
+
+    text-align: center;
+    margin-bottom: 0;
+
+    span {
+        @extend %has-separator;
+
+        &:before,
+        &:after {
+            bottom: 50%;
+            background: map-get($separator-line, "colour" );
+
+            @include media-breakpoint-up('sm') {
+                width: map-get($separator-line, "x-length" );
+                height: map-get($separator-line, "thickness");
+            }
+            @include media-breakpoint-up('md') {
+                width: map-get($separator-line, "x-length-lg");
+            }
+        }
+
+        &:before {
+            left: -10px;
+            transform: translate(-100%, 1px);
+        }
+
+        &:after {
+            right: -10px;
+            transform: translate(100%, 1px);
+        }
+
+    }
+}
